@@ -21,6 +21,7 @@ class ContactFormsController < ApplicationController
 
   def show
     @contact_form = ContactForm.find(params[:id])
+    @contact_form.message_read = true
   end
 
   private

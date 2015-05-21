@@ -1,15 +1,20 @@
-= simple_form_for @contact_form do |f|
-  - if @contact_form.errors.any?
-    #errors
-      %h2
-        = pluralize(@contact_form.errors.count, "error")
-        prevented this contact form from saving
-      %ul
-        - @contact_form.errors.full_messages.each do |msg|
-          %li= msg
+%div.form
+  = simple_form_for @contact_form do |f|
+    - if @contact_form.errors.any?
+      #errors
+        %h2
+          = pluralize(@contact_form.errors.count, "error")
+          prevented this contact form from saving
+        %ul
+          - @contact_form.errors.full_messages.each do |msg|
+            %li= msg
 
 
-  = f.input :email, label: 'Adres email',required: true, pattern: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, placeholder: 'user@domain.com'
-  = f.input :description, label: 'Opis problemu', required: true, input_html: { minlength: 100 }
-  = f.input :category, collection: ContactForm::CATEGORIES, label: 'Kategoria', prompt: 'Wybierz', required: true
-  = f.submit 'Wyślij zgłoszenie'
+    = f.input :email, label: 'Adres email',required: true, pattern: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, placeholder: 'user@domain.com'
+    = f.input :description, label: 'Opis problemu', required: true, input_html: { minlength: 100 }
+    = f.input :category, collection: ContactForm::CATEGORIES, label: 'Kategoria', prompt: 'Wybierz', required: true
+    %div#submit
+      = f.submit 'Wyślij zgłoszenie'
+
+%div.navigation
+  =link_to 'Powrót', root_path

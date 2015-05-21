@@ -6,8 +6,8 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    =render partial: 'shared/navigation'
+    %div.header
+      %h1= link_to 'ZGŁOŚ SWÓJ PROBLEM', new_contact_form_path
+      %h2 MY ZNAJDZIEMY ROZWIĄZANIE
 
     = yield
-
-

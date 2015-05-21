@@ -9,14 +9,14 @@ class ContactFormsController < ApplicationController
   end
 
   def create
-    contact_form = ContactForm.create(contact_form_params)
-    if contact_form.save
-       flash[:success] = "Formularz wysłany poprawnie!"
+    @contact_form = ContactForm.new(contact_form_params)
+    if @contact_form.save
+      flash.now[:success] = "Form sent successfully!"
+      redirect_to contact_forms_path
     else
-       flash[:error] = "Ups...coś poszło nie tak :( Wyślij zgłoszenie raz jeszcze"
+      flash.now[:error] = "Something went wrong, send your form once again"
+      render :new
     end
-
-    redirect_to contact_forms_path
   end
 
   def show

@@ -1,8 +1,8 @@
 class ContactForm < ActiveRecord::Base
 
-  FAILURE = 'Awaria'
-  DAMAGE = 'Uszkodzenie'
-  FAULT = 'Usterka'
+  FAILURE = 'Failure'
+  DAMAGE = 'Damage'
+  FAULT = 'Fault'
 
   CATEGORIES = [FAILURE, DAMAGE, FAULT]
 

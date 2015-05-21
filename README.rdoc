@@ -4,8 +4,10 @@ Report a problem is an application collecting user's technical issues submission
 
 After you clone this repository please remember to:
 
-Run bundle install to install all missing gems
-Run rake db:migrate to prepare database
-Start server with "rails s"
+- Run bundle install to install all missing gems
+
+- Run rake db:migrate to prepare database
+
+- Start server with "rails s"
 
 After it's done you can access Report a Problem under http://localhost:3000/

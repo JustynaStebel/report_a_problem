@@ -10,11 +10,11 @@
             %li= msg
 
 
-    = f.input :email, label: 'Adres email',required: true, pattern: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, placeholder: 'user@domain.com'
-    = f.input :description, label: 'Opis problemu', required: true, input_html: { minlength: 100 }
-    = f.input :category, collection: ContactForm::CATEGORIES, label: 'Kategoria', prompt: 'Wybierz', required: true
+    = f.input :email, required: true, pattern: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, placeholder: 'user@domain.com'
+    = f.input :description, required: true, input_html: { minlength: 100 }
+    = f.input :category, collection: ContactForm::CATEGORIES, prompt: 'Choose...', required: true
     %div#submit
       = f.submit 'Wyślij zgłoszenie'
 
 %div.navigation
-  =link_to 'Powrót', root_path
+  =link_to 'Go back', root_path
